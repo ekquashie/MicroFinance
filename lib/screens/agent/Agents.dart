@@ -178,12 +178,12 @@ class _AgentsState extends State<Agents> {
               ),
             ),
             actions: [
-              FlatButton(
+              TextButton(
                   onPressed: () {
                     Navigator.of(context).pop();
                   },
                   child: Text("CANCEL", style: TextStyle(color: customRed))),
-              FlatButton(
+              TextButton(
                 onPressed: () {
                   if (_formKey.currentState.validate()) {
                     users

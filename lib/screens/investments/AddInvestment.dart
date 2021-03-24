@@ -155,21 +155,21 @@ class _AddInvestmentState extends State<AddInvestment> {
                   SizedBox(height: 15),
                   ButtonTheme(
                     minWidth: double.infinity,
-                    child: RaisedButton(
-                      padding:
-                          EdgeInsets.symmetric(vertical: 15, horizontal: 40),
+                    child: ElevatedButton(
                       onPressed: () async {
                         if (_formKey.currentState.validate()) {}
                       },
-                      child: Text(
-                        'Create Customer',
-                        style: TextStyle(fontSize: 20),
+                      style: ElevatedButton.styleFrom(
+                        primary: customRed,
+                        onPrimary: Colors.white,
                       ),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(0),
+                      child: Padding(
+                        padding: const EdgeInsets.all(15.0),
+                        child: Text(
+                          'Create Customer',
+                          style: TextStyle(fontSize: 20),
+                        ),
                       ),
-                      color: customRed,
-                      textColor: Colors.white,
                     ),
                   ),
                 ],
@@ -189,7 +189,7 @@ class _AddInvestmentState extends State<AddInvestment> {
           return AlertDialog(
             title: Text("Customer created!"),
             actions: [
-              FlatButton(
+              TextButton(
                   onPressed: () {
                     Navigator.of(context).pop();
                   },

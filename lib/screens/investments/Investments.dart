@@ -30,7 +30,7 @@ class _InvestmentsState extends State<Investments> {
           style: TextStyle(color: Colors.black),
         ),
         actions: [
-          FlatButton(
+          TextButton(
             onPressed: () async {
               DateTime date = await showDatePicker(
                 context: context,

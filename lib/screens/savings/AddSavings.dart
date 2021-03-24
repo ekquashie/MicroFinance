@@ -188,7 +188,6 @@ class _AddSavingsState extends State<AddSavings> {
                   SizedBox(height: 15),
                   ButtonTheme(
                     minWidth: double.infinity,
-                    // ignore: deprecated_member_use
                     child: ElevatedButton(
                       onPressed: () async {
                         if (_formKey.currentState.validate()) {

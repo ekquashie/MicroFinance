@@ -70,8 +70,7 @@ class _LoginState extends State<Login> {
                 SizedBox(height: 20),
                 ButtonTheme(
                   minWidth: double.infinity,
-                  child: RaisedButton(
-                    padding: EdgeInsets.symmetric(vertical: 15, horizontal: 40),
+                  child: ElevatedButton(
                     onPressed: () async {
                       if (_formKey.currentState.validate()) {
                         progressDialog.show();
@@ -86,15 +85,17 @@ class _LoginState extends State<Login> {
                         }
                       }
                     },
-                    child: Text(
-                      'Login',
-                      style: TextStyle(fontSize: 20),
+                    style: ElevatedButton.styleFrom(
+                      primary: customRed,
+                      onPrimary: Colors.white,
                     ),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(50),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        'Login',
+                        style: TextStyle(fontSize: 20),
+                      ),
                     ),
-                    color: customRed,
-                    textColor: Colors.white,
                   ),
                 ),
               ],

@@ -43,7 +43,7 @@ class _SavingsState extends State<Savings> {
           style: TextStyle(color: Colors.black),
         ),
         actions: [
-          FlatButton(
+          TextButton(
             onPressed: () async {
               DateTime date = await showDatePicker(
                 context: context,

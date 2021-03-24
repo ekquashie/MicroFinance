@@ -33,7 +33,7 @@ class _LoanState extends State<Loan> {
           style: TextStyle(color: Colors.black),
         ),
         actions: [
-          FlatButton(
+          TextButton(
             onPressed: () {},
             child: Icon(Icons.calendar_today),
           )

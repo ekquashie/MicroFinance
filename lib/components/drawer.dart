@@ -69,7 +69,7 @@ class _AppDrawerState extends State<AppDrawer> {
                       return AlertDialog(
                         title: Text("Logout?"),
                         actions: [
-                          FlatButton(
+                          TextButton(
                               onPressed: () {
                                 Navigator.of(context).pop();
                               },
@@ -77,7 +77,7 @@ class _AppDrawerState extends State<AppDrawer> {
                                 "CANCEL",
                                 style: TextStyle(color: Colors.red),
                               )),
-                          FlatButton(
+                          TextButton(
                               onPressed: () {
                                 _auth.signOut();
                               },

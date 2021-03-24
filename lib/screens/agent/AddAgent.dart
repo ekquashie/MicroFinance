@@ -189,9 +189,7 @@ class _AddAgentState extends State<AddAgent> {
                   SizedBox(height: 15),
                   ButtonTheme(
                     minWidth: double.infinity,
-                    child: RaisedButton(
-                      padding:
-                          EdgeInsets.symmetric(vertical: 15, horizontal: 40),
+                    child: ElevatedButton(
                       onPressed: () async {
                         if (_formKey.currentState.validate() &&
                             idType != null) {
@@ -205,15 +203,17 @@ class _AddAgentState extends State<AddAgent> {
                           }
                         }
                       },
-                      child: Text(
-                        'Create Agent',
-                        style: TextStyle(fontSize: 20),
+                      style: ElevatedButton.styleFrom(
+                        primary: customRed,
+                        onPrimary: Colors.white,
                       ),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(0),
+                      child: Padding(
+                        padding: const EdgeInsets.all(15.0),
+                        child: Text(
+                          'Create Agent',
+                          style: TextStyle(fontSize: 20),
+                        ),
                       ),
-                      color: customRed,
-                      textColor: Colors.white,
                     ),
                   ),
                 ],
@@ -233,7 +233,7 @@ class _AddAgentState extends State<AddAgent> {
           return AlertDialog(
             title: Text("Agent created!"),
             actions: [
-              FlatButton(
+              TextButton(
                   onPressed: () {
                     Navigator.of(context).pop();
                   },

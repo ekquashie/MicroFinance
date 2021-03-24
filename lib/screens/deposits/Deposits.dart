@@ -24,7 +24,7 @@ class _DepositsState extends State<Deposits> {
           style: TextStyle(color: Colors.black),
         ),
         actions: [
-          FlatButton(
+          TextButton(
             onPressed: () {},
             child: Icon(Icons.calendar_today),
           )

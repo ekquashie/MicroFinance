@@ -345,13 +345,13 @@ class _SavingsDetailState extends State<SavingsDetail> {
               ),
             ),
             actions: [
-              FlatButton(
+              TextButton(
                 onPressed: () {
                   Navigator.of(context).pop();
                 },
                 child: Text("CANCEL", style: TextStyle(color: customRed)),
               ),
-              FlatButton(
+              TextButton(
                 onPressed: () async {
                   print(currentAmount);
                   if (_formKey.currentState.validate()) {
@@ -411,7 +411,7 @@ class _SavingsDetailState extends State<SavingsDetail> {
               ),
             ),
             actions: [
-              FlatButton(
+              TextButton(
                 onPressed: () {
                   Navigator.of(context).pop();
                 },
@@ -420,7 +420,7 @@ class _SavingsDetailState extends State<SavingsDetail> {
                   style: TextStyle(color: Colors.red),
                 ),
               ),
-              FlatButton(
+              TextButton(
                 onPressed: () async {
                   if (_formKey.currentState.validate()) {
                     if (currentAmount >= withdrawalAmount) {
@@ -514,7 +514,7 @@ class _SavingsDetailState extends State<SavingsDetail> {
               ),
             ),
             actions: [
-              FlatButton(
+              TextButton(
                 onPressed: () {
                   Navigator.of(context).pop();
                 },
@@ -523,7 +523,7 @@ class _SavingsDetailState extends State<SavingsDetail> {
                   style: TextStyle(color: Colors.red),
                 ),
               ),
-              FlatButton(
+              TextButton(
                 onPressed: () {
                   if (_formKey.currentState.validate()) {
                     customers.doc(widget.customer.id).update({

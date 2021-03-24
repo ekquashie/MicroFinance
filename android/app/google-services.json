@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "398341282731",
+    "project_id": "susu-e766b",
+    "storage_bucket": "susu-e766b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:398341282731:android:d8de2186269ad910e350ee",
+        "android_client_info": {
+          "package_name": "com.example.susugh"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "398341282731-04l2jndkc4m06g2lb1sf3p1e6iuhg40i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-RJDWP0q5CWFAtfzVlYZb4Oi6WYivwZc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "398341282731-04l2jndkc4m06g2lb1sf3p1e6iuhg40i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

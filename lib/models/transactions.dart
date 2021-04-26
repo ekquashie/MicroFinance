@@ -58,9 +58,59 @@ class SavingsTransaction {
 
 class FDTransaction {
   String agent;
+  String transactionType;
   double rate;
   double amount;
   String date;
   String time;
   String customer;
+
+  FDTransaction(
+      {this.agent,
+      this.rate,
+      this.amount,
+      this.transactionType,
+      this.date,
+      this.time,
+      this.customer});
+
+  Map<String, dynamic> fdJson() => {
+        "agent": agent,
+        "rate": rate,
+        "transaction type": transactionType,
+        "amount": amount,
+        "date": date,
+        "time": time,
+        "customer": customer,
+      };
+
+  static List<FDTransaction> getTransactions(customer) {
+    List fdList = <FDTransaction>[];
+    fdList
+        .where('customer', equal: customer)
+        .orderBy('date', descending: true)
+        .get()
+        .then((QuerySnapshot snapshot) {
+      snapshot.docs.forEach((doc) {
+        fdList.add(FDTransaction(
+          agent: doc['agent'],
+          rate: doc['rate'],
+          transactionType: doc['transaction type'],
+          amount: doc['amount'],
+          customer: doc['customer'],
+          date: doc['date'],
+          time: doc['time'],
+        ));
+      });
+    });
+    return fdList;
+  }
+
+  FDTransaction.fromSnapshot(DocumentSnapshot snapshot)
+      : agent = snapshot['agent'],
+        customer = snapshot['customer'],
+        amount = snapshot['amount'],
+        rate = snapshot['rate'],
+        date = snapshot['date'],
+        time = snapshot['time'];
 }

@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:susu_gh/services/database.dart';
 
+//Savings Transactino Module
 class SavingsTransaction {
   String agent;
   String customer;
@@ -17,6 +18,7 @@ class SavingsTransaction {
       this.date,
       this.time});
 
+//Savings JSON format to database from user input
   Map<String, dynamic> savingsJson() => {
         "agent": agent,
         "customer": customer,
@@ -56,6 +58,7 @@ class SavingsTransaction {
         time = snapshot['time'];
 }
 
+//*******Fixed Deposit Transaction Module*******
 class FDTransaction {
   String agent;
   String transactionType;
@@ -74,6 +77,7 @@ class FDTransaction {
       this.time,
       this.customer});
 
+//Fixed Deposit JSON format to database from user input
   Map<String, dynamic> fdJson() => {
         "agent": agent,
         "rate": rate,
@@ -84,28 +88,28 @@ class FDTransaction {
         "customer": customer,
       };
 
-  static List<FDTransaction> getTransactions(customer) {
-    List fdList = <FDTransaction>[];
-    fdList
-        .where('customer', equal: customer)
-        .orderBy('date', descending: true)
-        .get()
-        .then((QuerySnapshot snapshot) {
-      snapshot.docs.forEach((doc) {
-        fdList.add(FDTransaction(
-          agent: doc['agent'],
-          rate: doc['rate'],
-          transactionType: doc['transaction type'],
-          amount: doc['amount'],
-          customer: doc['customer'],
-          date: doc['date'],
-          time: doc['time'],
-        ));
-      });
-    });
-    return fdList;
-  }
+  // static List<FDTransaction> getTransactions(customer) {
+  //   List fdList = <FDTransaction>[];
+  //   fdList
+  //       .orderBy('date', descending: true)
+  //       .get()
+  //       .then((QuerySnapshot snapshot) {
+  //     snapshot.docs.forEach((doc) {
+  //       fdList.add(FDTransaction(
+  //         agent: doc['agent'],
+  //         rate: doc['rate'],
+  //         transactionType: doc['transaction type'],
+  //         amount: doc['amount'],
+  //         customer: doc['customer'],
+  //         date: doc['date'],
+  //         time: doc['time'],
+  //       ));
+  //     });
+  //   });
+  //   return fdList;
+  // }
 
+//snapshot from firebase to search for transactions
   FDTransaction.fromSnapshot(DocumentSnapshot snapshot)
       : agent = snapshot['agent'],
         customer = snapshot['customer'],

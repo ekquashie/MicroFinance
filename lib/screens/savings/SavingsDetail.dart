@@ -127,17 +127,17 @@ class _SavingsDetailState extends State<SavingsDetail> {
         .get()
         .then((DocumentSnapshot documentSnapshot) async {
       setState(() {
-        currentAmount = documentSnapshot.data()['current'].toString();
-        phone = documentSnapshot.data()['phone'];
-        location = documentSnapshot.data()['location'];
-        profession = documentSnapshot.data()['profession'];
-        createdBy = documentSnapshot.data()['created by'];
+        currentAmount = documentSnapshot['current'].toString();
+        phone = documentSnapshot['phone'];
+        location = documentSnapshot['location'];
+        profession = documentSnapshot['profession'];
+        createdBy = documentSnapshot['created by'];
       });
     });
 
     users.doc(uid).get().then((DocumentSnapshot documentSnapshot) {
       if (documentSnapshot.exists) {
-        user = documentSnapshot.data()['user'];
+        user = documentSnapshot['user'];
       }
     });
 

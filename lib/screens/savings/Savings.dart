@@ -108,17 +108,17 @@ class _SavingsState extends State<Savings> {
                         ),
                         child: ListTile(
                           title: Text(
-                            document.data()['customer'],
+                            document['customer'],
                             style: TextStyle(fontSize: 18),
                           ),
                           subtitle: Text(
-                            document.data()['transaction type'] +
+                            document['transaction type'] +
                                 " by: " +
-                                document.data()['agent'],
+                                document['agent'],
                             style: TextStyle(fontSize: 15),
                           ),
                           trailing: Text(
-                            "GHS " + document.data()['amount'].toString(),
+                            "GHS " + document['amount'].toString(),
                             style: TextStyle(fontSize: 18),
                           ),
                         ),

@@ -31,7 +31,7 @@ class _CheckerState extends State<Checker> {
   }
 
   checkRole(DocumentSnapshot snapshot) {
-    if (snapshot.data()['isAdmin'] == true) {
+    if (snapshot['isAdmin'] == true) {
       return Agents();
     } else {
       return Center(child: Text("Admins only!"));
@@ -103,12 +103,12 @@ class _AgentsState extends State<Agents> {
                         child: ListTile(
                           contentPadding:
                               EdgeInsets.symmetric(vertical: 5, horizontal: 20),
-                          title: Text("${document.data()['user']}"),
+                          title: Text("${document['user']}"),
                           trailing: InkWell(
                             onTap: () {
                               agentUid = document.id;
-                              agentInfo(context, document.data()['firstname'],
-                                  document.data()['lastname'], agentUid);
+                              agentInfo(context, document['firstname'],
+                                  document['lastname'], agentUid);
                             },
                             child: Icon(
                               Icons.edit,

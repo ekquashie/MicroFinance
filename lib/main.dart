@@ -20,6 +20,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return StreamProvider<SusuUser>.value(
       value: Authentication().user,
+      initialData: null,
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: "SusuGH",

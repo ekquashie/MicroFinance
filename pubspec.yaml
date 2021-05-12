@@ -1,5 +1,5 @@
 name: susu_gh
-description: A new Flutter project.
+description: MicroFinance Mobile Application
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `pub publish`. This is preferred for private packages.
@@ -28,7 +28,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.0
   firebase_auth: ^1.1.4
-  cloud_firestore: ^0.14.4
+  cloud_firestore: ^2.1.0
   firebase_core: ^1.1.1
   firebase_messaging: ^9.1.4
   provider: ^5.0.0
